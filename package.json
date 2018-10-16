@@ -1,0 +1,28 @@
+{
+  "name": "tictactoe",
+  "version": "1.0.0",
+  "description": "tictactoe in node",
+  "main": "tic.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LonelyDancers/LateTermAssignment.git"
+  },
+  "keywords": [
+    "tictactoe",
+    "hugbúnaðarfræði",
+    "tdd",
+    "testing"
+  ],
+  "author": "Lonely Dancers",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LonelyDancers/LateTermAssignment/issues"
+  },
+  "homepage": "https://github.com/LonelyDancers/LateTermAssignment#readme",
+  "devDependencies": {
+    "jest": "^23.6.0"
+  }
+}
