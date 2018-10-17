@@ -3,10 +3,7 @@ var	xTurn = true;
 var turnNumber = 1;
 
 function insert(index, isXTurn) {
-	if(index < 0 || index > 8){
-		return false;
-	}
-	if(board[index] != ''){
+	if(index < 0 || index > 8 || board[index] != ''){
 		return false;
 	}
 	if(isXTurn){
