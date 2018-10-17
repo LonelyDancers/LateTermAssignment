@@ -26,7 +26,7 @@ it("should return false for inserting on full cell", () => {
 	expect(testInsertMany()).toBe(false);
 });
 
-it("should return false for inserting on full cell", () => {
+it("should return O which was inserted", () => {
 	function testOchar(){
 		tic.insert(7, false);
 		var theboard = tic.board[7];
@@ -35,11 +35,11 @@ it("should return false for inserting on full cell", () => {
 	expect(testOchar()).toBe('o');
 });
 
-it("should return false for inserting on full cell", () => {
-	function testxchar(){
+it("should return X which was inserted", () => {
+	function testXchar(){
 		tic.insert(8, true);
 		var board = tic.board[8];
 		return board;
 	}
-	expect(testxchar()).toBe('x');
+	expect(testXchar()).toBe('x');
 });
