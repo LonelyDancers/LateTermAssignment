@@ -1,10 +1,5 @@
 const tic = require("./tic");
 
-
-it("should return hello world", () => {
-	expect(tic.main()).toBe("Hello, World!");
-});
-
 it("should return false for less than zero", () => {
 	expect(tic.insert(-1, true)).toBe(false);
 });
@@ -42,4 +37,12 @@ it("should return X which was inserted", () => {
 		return board;
 	}
 	expect(testXchar()).toBe('x');
+});
+
+it("Should return the same board that was inserted", () => {
+	function testGetBoard(theBoard){
+		tic.setBoard(theBoard);
+		return tic.getBoard();
+	}
+	expect(testGetBoard(['','','','','','','','',''])).toEqual(['','','','','','','','','']);
 });
