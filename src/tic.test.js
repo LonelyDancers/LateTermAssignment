@@ -44,5 +44,85 @@ it("Should return the same board that was inserted", () => {
 		tic.setBoard(theBoard);
 		return tic.getBoard();
 	}
-	expect(testGetBoard(['','','','','','','','',''])).toEqual(['','','','','','','','','']);
+	expect(testGetBoard(['','','x','','','','','',''])).toEqual(['','','x','','','','','','']);
+});
+
+it("Should return x", () => {
+	function testGameOver(theBoard){
+		tic.setBoard(theBoard);
+		return tic.gameOver();
+	}
+	expect(testGameOver(['x','x','x','o','o','x','x','o','o'])).toEqual('x');
+});
+
+it("Should return o", () => {
+	function testGameOver(theBoard){
+		tic.setBoard(theBoard);
+		return tic.gameOver();
+	}
+	expect(testGameOver(['x','o','x','o','o','o','x','x',''])).toEqual('o');
+});
+
+it("Should return x", () => {
+	function testGameOver(theBoard){
+		tic.setBoard(theBoard);
+		return tic.gameOver();
+	}
+	expect(testGameOver(['x','o','','','o','o','x','x','x'])).toEqual('x');
+});
+
+it("Should return o", () => {
+	function testGameOver(theBoard){
+		tic.setBoard(theBoard);
+		return tic.gameOver();
+	}
+	expect(testGameOver(['o','x','','o','x','x','o','',''])).toEqual('o');
+});
+
+it("Should return x", () => {
+	function testGameOver(theBoard){
+		tic.setBoard(theBoard);
+		return tic.gameOver();
+	}
+	expect(testGameOver(['x','x','o','o','x','','o','x',''])).toEqual('x');
+});
+
+it("Should return o", () => {
+	function testGameOver(theBoard){
+		tic.setBoard(theBoard);
+		return tic.gameOver();
+	}
+	expect(testGameOver(['','x','o','x','x','o','','','o'])).toEqual('o');
+});
+
+it("Should return x", () => {
+	function testGameOver(theBoard){
+		tic.setBoard(theBoard);
+		return tic.gameOver();
+	}
+	expect(testGameOver(['x','','','','x','o','','o','x'])).toEqual('x');
+});
+
+it("Should return o", () => {
+	function testGameOver(theBoard){
+		tic.setBoard(theBoard);
+		return tic.gameOver();
+	}
+	expect(testGameOver(['','','o','x','o','','o','x','x'])).toEqual('o');
+});
+
+it("Should return d", () => {
+	function testGameOver(theBoard){
+		tic.setBoard(theBoard);
+		return tic.gameOver();
+	}
+	expect(testGameOver(['x','o','x','x','o','o','o','x','x'])).toEqual('d');
+});
+
+it("Should return c", () => {
+	function testGameOver(theBoard){
+		tic.setBoard(theBoard);
+		return tic.gameOver();
+	}
+	expect(testGameOver(['x','o','x','o','','','','',''])).toEqual('c');
 });
