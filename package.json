@@ -4,7 +4,10 @@
   "description": "tictactoe in node",
   "main": "tic.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest --colors",
+    "watch": "jest --watchAll",
+    "clean": "rm -rf node_modules",
+    "build": "jest --colors && rm -rf node_modules"
   },
   "repository": {
     "type": "git",
@@ -24,5 +27,9 @@
   "homepage": "https://github.com/LonelyDancers/LateTermAssignment#readme",
   "devDependencies": {
     "jest": "^23.6.0"
+  },
+  "jest": {
+    "collectCoverage": true,
+    "collectCoverageFrom": ["src/**/*.{js,jsx}"]
   }
 }
