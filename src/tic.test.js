@@ -47,7 +47,7 @@ it("Should return the same board that was inserted", () => {
 	expect(testGetBoard(['','','x','','','','','',''])).toEqual(['','','x','','','','','','']);
 });
 
-it("Should return x", () => {
+it("Should return x when x wins with row 1", () => {
 	function testGameOver(theBoard){
 		tic.setBoard(theBoard);
 		return tic.gameOver();
@@ -55,7 +55,7 @@ it("Should return x", () => {
 	expect(testGameOver(['x','x','x','o','o','x','x','o','o'])).toEqual('x');
 });
 
-it("Should return o", () => {
+it("Should return o when o wins with row 2", () => {
 	function testGameOver(theBoard){
 		tic.setBoard(theBoard);
 		return tic.gameOver();
@@ -63,7 +63,7 @@ it("Should return o", () => {
 	expect(testGameOver(['x','o','x','o','o','o','x','x',''])).toEqual('o');
 });
 
-it("Should return x", () => {
+it("Should return x when x wins with row 3", () => {
 	function testGameOver(theBoard){
 		tic.setBoard(theBoard);
 		return tic.gameOver();
@@ -71,7 +71,7 @@ it("Should return x", () => {
 	expect(testGameOver(['x','o','','','o','o','x','x','x'])).toEqual('x');
 });
 
-it("Should return o", () => {
+it("Should return o when o wins with column 1", () => {
 	function testGameOver(theBoard){
 		tic.setBoard(theBoard);
 		return tic.gameOver();
@@ -79,7 +79,7 @@ it("Should return o", () => {
 	expect(testGameOver(['o','x','','o','x','x','o','',''])).toEqual('o');
 });
 
-it("Should return x", () => {
+it("Should return x when o wins with column 2", () => {
 	function testGameOver(theBoard){
 		tic.setBoard(theBoard);
 		return tic.gameOver();
@@ -87,7 +87,7 @@ it("Should return x", () => {
 	expect(testGameOver(['x','x','o','o','x','','o','x',''])).toEqual('x');
 });
 
-it("Should return o", () => {
+it("Should return o when o wins with column 3", () => {
 	function testGameOver(theBoard){
 		tic.setBoard(theBoard);
 		return tic.gameOver();
@@ -95,7 +95,7 @@ it("Should return o", () => {
 	expect(testGameOver(['','x','o','x','x','o','','','o'])).toEqual('o');
 });
 
-it("Should return x", () => {
+it("Should return x when x wins with \\ diagonal", () => {
 	function testGameOver(theBoard){
 		tic.setBoard(theBoard);
 		return tic.gameOver();
@@ -103,7 +103,7 @@ it("Should return x", () => {
 	expect(testGameOver(['x','','','','x','o','','o','x'])).toEqual('x');
 });
 
-it("Should return o", () => {
+it("Should return o when o wins with / diagonal", () => {
 	function testGameOver(theBoard){
 		tic.setBoard(theBoard);
 		return tic.gameOver();
@@ -111,7 +111,7 @@ it("Should return o", () => {
 	expect(testGameOver(['','','o','x','o','','o','x','x'])).toEqual('o');
 });
 
-it("Should return d", () => {
+it("Should return d when the game is a draw", () => {
 	function testGameOver(theBoard){
 		tic.setBoard(theBoard);
 		return tic.gameOver();
@@ -119,7 +119,7 @@ it("Should return d", () => {
 	expect(testGameOver(['x','o','x','x','o','o','o','x','x'])).toEqual('d');
 });
 
-it("Should return c", () => {
+it("Should return c when the game should continue", () => {
 	function testGameOver(theBoard){
 		tic.setBoard(theBoard);
 		return tic.gameOver();

@@ -1,6 +1,6 @@
 var board=['','','','','','','','',''];
 var	xTurn = true;
-var turnNumber = 1;
+var turnNumber = 0;
 
 //if the index is not legal it returns false.
 //if the index is already full it returns false
@@ -21,22 +21,16 @@ function insert(index, isXTurn) {
 
 function gameOver() {
 	for (var i = 0; i < 3; i++) {
-		if (board[i] == '')
-			continue;
-		if (board[i] == board[i + 3] && board[i] == board[i + 6])
+		if (board[i] != '' && board[i] == board[i + 3] && board[i] == board[i + 6])
 			return board[i];
-	}
-	for(i = 0; i < 9; i += 3) {
-		if (board[i] == '')
-			continue;
-		if (board[i] == board[i + 1] && board[i] == board[i + 2])
-			return board[i];
+		if (board[i * 3] != '' && board[i * 3] == board[i * 3 + 1] && board[i * 3] == board[i * 3 + 2])
+			return board[i * 3];
 	}
 	if (board[0] != '' && board[0] == board[4] && board[0] == board[8])
 		return board[0];
 	if (board[2] != '' && board[2] == board[4] && board[2] == board[6])
 		return board[2];
-	if (turnNumber >= 10)
+	if (turnNumber >= 9)
 			return 'd';
 	return 'c';
 }
@@ -49,7 +43,7 @@ function getBoard() {
 //sets the board.
 function setBoard(newBoard) {
 	board = newBoard;
-	var counter = 1;
+	var counter = 0;
 	for (var i = 0; i < 9; i++) {
 		if (board[i] != '')
 			counter++;
