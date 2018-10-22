@@ -1,10 +1,13 @@
 // app.js
 
+const path = require("path");
 const express = require("express");
 const app = express();
 const api = require("./src/server/api");
 
-// For all queries to localhost:3000/api/...
+app.use(express.static(path.join(__dirname, "dist")));
+
+// For all queries to localhost:8080/api/...
 // use the API router (see below)
 app.use("/api", api);
 
@@ -12,5 +15,7 @@ app.use("/api", api);
 app.get("*", (req, res) => {
   res.status(404).send({ error: "No route defined" });
 });
+
+app.set("json spaces", 2);
 
 module.exports = app;
