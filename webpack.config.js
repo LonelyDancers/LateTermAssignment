@@ -19,6 +19,14 @@ module.exports = {
         filename: 'main.js',
         path: path.resolve(__dirname, 'dist')
     },
+    module: {
+        rules: [ 
+            {
+                test: /\.css$/,
+                use: ['style-loader', 'css-loader']
+            }
+        ]
+    },
     devServer: {
         port: 3000,
         open: true,
@@ -28,7 +36,8 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-        title: 'Greeting page'
+        title: 'Tic Tac Toe',
+        template: './src/client/tictactoe.html'
         }),
         new CleanWebpackPlugin(pathsToClean, cleanOptions)
     ]
