@@ -7,3 +7,30 @@ document.getElementById("button").addEventListener("click", function() {
     var x = tic.getBoard();
     alert(x);
     });
+
+    
+$('td').click(function(){
+    var index =  $('td').index(this);
+
+    var valid = tic.insert(index, isXTurn);
+    if(valid)
+    {
+        var turn = 'O';
+        if(isXTurn){
+            turn = 'X';
+        }
+       $(this).html(turn);
+       isXTurn = !isXTurn;
+    }
+    else{
+        alert('This space is occupied, please try another rate.');
+    }
+
+    var char = tic.gameOver();
+    if( char == 'd') {
+        alert("it's a draw!");//save draw to Score Board
+    }
+    else if(char == 'x' || char == 'o') {
+        alert(char, ' won!');
+    }
+});
