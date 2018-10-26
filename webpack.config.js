@@ -1,3 +1,4 @@
+var webpack = require('webpack');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
@@ -35,6 +36,10 @@ module.exports = {
         }
     },
     plugins: [
+        new webpack.ProvidePlugin({
+            $: 'jquery',
+            jQuery: 'jquery'
+        }),
         new HtmlWebpackPlugin({
         title: 'Tic Tac Toe',
         template: './src/client/tictactoe.html'
