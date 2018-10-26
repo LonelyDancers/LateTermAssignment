@@ -41,7 +41,7 @@ jobs:
     steps:
       - checkout
       - run:
-        name: Deploy Master to Heroku
+          name: Deploy Master to Heroku
           command: |
             git push https://heroku:0ec465b5-7833-43a1-b0e6-93bc38581427@git.heroku.com/lonelydancers.git master
 workflows:
