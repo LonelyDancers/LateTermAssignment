@@ -1,0 +1,95 @@
+h1{
+    font-family: 'Bevan';
+    text-align: center;
+}
+h2{
+    text-align: center;
+}
+form{
+    display: flex;
+    justify-content: center;
+}
+label{
+    margin-left: 5%;
+    margin-right: 5px;
+}
+
+#table{
+    font-size: larger;
+    max-width: 130px;
+    min-width: 130px;
+}
+#tandb{
+    position: absolute;
+    top: 50%;
+    margin-bottom: -50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+}
+#ttt{
+    border-collapse: collapse;
+    border-style: hidden;
+    text-align: center;
+    font-size: 50px;
+}
+#button, h2{
+    position: fixed;
+    bottom : 15%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+}
+#tr > td {
+    border: 3px solid black;
+    width: 60px;
+    height: 60px;
+}
+
+@media screen and (min-width: 580px)
+{
+    h1{font-size: 80px; font-style: initial;}
+
+    #table{
+        position: absolute;
+        top: 46%;
+        margin-left: 5%;
+        border-style: solid;
+    }
+
+}
+@media screen and (max-width: 580px)
+{
+    #table{
+        position: absolute;
+        left: 50%;
+        margin-right: -50%;
+        transform: translate(-50%, -50%);
+    }
+    form {
+        position: absolute;
+        left: 50%;
+        margin-right: -50%;
+        transform: translate(-50%, -50%);
+        display: block;
+    }
+    label, input {
+        display: block;
+        justify-content: baseline;
+    }
+
+}
+@media screen and (max-height: 550px)
+{
+    h1{ font-size: 40px;}
+    #table{margin-top: 1cm;}
+    #button, h2{
+        position: fixed;
+        bottom : 5%;
+    }
+}
+@media screen and (min-height: 550px) and (max-width: 580px)
+{
+    h1{ font-size: 40px;}
+    #table{margin-top: 1cm;}
+}
