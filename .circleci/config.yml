@@ -35,5 +35,23 @@ jobs:
         
       # run tests!
       - run: yarn test
-
-
+  deploy:
+    docker:
+      - image: buildpack-deps:trusty
+    steps:
+      - checkout
+      - run:
+        name: Deploy Master to Heroku
+          command: |
+            git push https://heroku:0ec465b5-7833-43a1-b0e6-93bc38581427git.heroku.com/lonelydancers.git master
+workflows:
+  version: 2
+  build-deploy:
+    jobs:
+      - build
+      - deploy:
+          requires:
+            - build
+          filters:
+            branches:
+              only: master
