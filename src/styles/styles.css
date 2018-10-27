@@ -40,12 +40,16 @@ label{
     margin-right: -50%;
     transform: translate(-50%, -50%);
 }
-#tr > td {
+.tr > td {
     border: 3px solid black;
     width: 60px;
     height: 60px;
 }
-
+#winnerAlert {
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+}
 @media screen and (min-width: 580px)
 {
     h1{font-size: 80px; font-style: initial;}

@@ -2,7 +2,6 @@ import _ from 'lodash';
 const api = require("../logic/tic.js");
 const styles = require("../styles/styles.css");
 const path = require("path");
-var isXTurn = true;
 
 $('td').click(function(){
     var index =  $('td').index(this);
@@ -19,10 +18,8 @@ $('td').click(function(){
         });
         const content = await rawResponse;
         let data = {
-            "whosTurn": isXTurn,
             "theIndex" : index
         }
-        console.log(data.theIndex + "WHOSTURN " + data.whosTurn);
         const rawResponse2 = await fetch("api/tic/insert", {
             method: 'POST', // or 'PUT'
             body: JSON.stringify(data), // data can be `string` or {object}!
@@ -40,6 +37,7 @@ $('td').click(function(){
             });
         const content2 = await rawResponse2;
         var valid = content2.valid;
+        var isXTurn = !content2.xTurn;
         if(valid)
         {
             var turn = 'O';
