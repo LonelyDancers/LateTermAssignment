@@ -18,6 +18,7 @@ $('td').click(function(){
     }
     else{
         alert('This space is occupied, please try another rate.');
+        
     }
 
     var char = tic.gameOver();
