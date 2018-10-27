@@ -16,6 +16,6 @@ app.get("*", (req, res) => {
   res.status(404).send({ error: "No route defined" });
 });
 
-app.set("json spaces", 2);
+//app.set("json spaces", 2);
 
 module.exports = app;
