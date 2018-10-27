@@ -5,7 +5,8 @@
   "main": "tic.js",
   "scripts": {
     "start-server": "npm start",
-    "ci": "start-server-and-test start-server http://localhost:8080 test",
+    "testPuppeteer": "jest --colors ./src/client/InteractWithForm.test.js",
+    "ci": "start-server-and-test start-server http://localhost:8080 testPuppeteer",
     "start": "node server",
     "test": "jest --colors",
     "watch": "jest --watchAll",
