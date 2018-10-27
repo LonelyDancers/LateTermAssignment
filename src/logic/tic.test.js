@@ -14,27 +14,18 @@ it("should return false for invalid input", () => {
 
 it("should return false for inserting on full cell", () => {
 	function testInsertMany(){
-		var boolResult = tic.insert(7, false);
-		boolResult = tic.insert(7, true);
+		tic.insert(7, false);
+		var boolResult = tic.insert(7, true);
 		return boolResult;
 	}
 	expect(testInsertMany()).toBe(false);
 });
 
-it("should return O which was inserted", () => {
-	function testOchar(){
-		tic.insert(7, false);
-		var theboard = tic.board[7];
-		return theboard;
-	}
-	expect(testOchar()).toBe('o');
-});
 
 it("should return X which was inserted", () => {
 	function testXchar(){
 		tic.insert(8, true);
-		var board = tic.board[8];
-		return board;
+		return tic.board.getIndex(8);
 	}
 	expect(testXchar()).toBe('x');
 });
@@ -42,7 +33,7 @@ it("should return X which was inserted", () => {
 it("Should return the same board that was inserted", () => {
 	function testGetBoard(theBoard){
 		tic.setBoard(theBoard);
-		return tic.getBoard();
+		return tic.board.getBoard();
 	}
 	expect(testGetBoard(['','','x','','','','','',''])).toEqual(['','','x','','','','','','']);
 });
@@ -126,3 +117,14 @@ it("Should return c when the game should continue", () => {
 	}
 	expect(testGameOver(['x','o','x','o','','','','',''])).toEqual('c');
 });
+
+it("Should return an empty board", () => {
+	function testNewGame(){
+		tic.insert(1,true);
+		tic.insert(2, false)
+		tic.newGame();
+		return tic.board.getBoard();
+	}
+	expect(testNewGame()).toEqual(['','','','','','','','','']);
+});
+
