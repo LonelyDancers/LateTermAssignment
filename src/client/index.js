@@ -25,6 +25,9 @@ $('td').click(function(){
         alert("it's a draw!");//save draw to Score Board
     }
     else if(char == 'x' || char == 'o') {
-        alert(char, ' won!');
+        document.querySelector('#winnerAlert').innerHTML = char + " Won!";
+
+
+        //alert(char, ' won!');
     }
 });
