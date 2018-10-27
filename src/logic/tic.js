@@ -1,50 +1,61 @@
 var Board = require('./board');
-var board = new Board();
-var	xTurn = true;
-var turnNumber = 0;
 
 //if the index is not legal it returns false.
 //if the index is already full it returns false
 //if the move is legal the move is inserted and turnnumber is incremented
-function insert(index, isXTurn) {
-	if(index < 0 || index > 8 || board.getIndex(index) != '') {
-		return false;
+class Tic {
+	constructor(){
+		this.turnNumber = 0;
+		this.xTurn = true;
+		this.board = new Board();
 	}
-	if(isXTurn){
-		board.setIndex(index, 'x');
+	insert(index) {
+		if(index < 0 || index > 8 || this.board.getIndex(index) != '') {
+			return false;
+		}
+		if(this.xTurn){
+			this.xTurn = !this.xTurn;
+			this.board.setIndex(index, 'x');
+		}
+		else{
+			this.xTurn = !this.xTurn;
+			this.board.setIndex(index, 'o');
+		}
+		this.turnNumber++;
+		return true;
 	}
-	else{
-		board.setIndex(index, 'o');
+	setBoard(newBoard){
+		this.turnNumber = this.board.setBoard(newBoard);
+		this.xTurn = true;
+		if(this.turnNumber % 2 == 1)
+		this.xTurn = false;
 	}
-	turnNumber++;
-	return true;
-}
-function setBoard(newBoard){
-	turnNumber = board.setBoard(newBoard);
-}
-function gameOver() {
-	for (var i = 0; i < 3; i++) {
-		if (board.getIndex(i) != '' && board.getIndex(i) == board.getIndex(i + 3) && board.getIndex(i) == board.getIndex(i + 6))
-			return board.getIndex(i);
-		if (board.getIndex(i * 3) != '' && board.getIndex(i * 3) == board.getIndex(i * 3 + 1) && board.getIndex(i * 3) == board.getIndex(i * 3 + 2))
-			return board.getIndex(i * 3);
+	getCurrentBoard() {
+		return this.board;
 	}
-	if (board.getIndex(0) != '' && board.getIndex(0) == board.getIndex(4) && board.getIndex(0) == board.getIndex(8))
-		return board.getIndex(0);
-	if (board.getIndex(2) != '' && board.getIndex(2) == board.getIndex(4) && board.getIndex(2) == board.getIndex(6))
-		return board.getIndex(2);
-	if (turnNumber >= 9)
-			return 'd';
-	return 'c';
-}
-function newGame(){
-	turnNumber = 0;
-	board = board.resetBoard();
+	getTurnNumber() {
+		return this.turnNumber;
+	}
+	gameOver() {
+		for (var i = 0; i < 3; i++) {
+			if (this.board.getIndex(i) != '' && this.board.getIndex(i) == this.board.getIndex(i + 3) && this.board.getIndex(i) == this.board.getIndex(i + 6))
+				return this.board.getIndex(i);
+			if (this.board.getIndex(i * 3) != '' && this.board.getIndex(i * 3) == this.board.getIndex(i * 3 + 1) && this.board.getIndex(i * 3) == this.board.getIndex(i * 3 + 2))
+				return this.board.getIndex(i * 3);
+		}
+		if (this.board.getIndex(0) != '' && this.board.getIndex(0) == this.board.getIndex(4) && this.board.getIndex(0) == this.board.getIndex(8))
+			return this.board.getIndex(0);
+		if (this.board.getIndex(2) != '' && this.board.getIndex(2) == this.board.getIndex(4) && this.board.getIndex(2) == this.board.getIndex(6))
+			return this.board.getIndex(2);
+		if (this.turnNumber >= 9)
+				return 'd';
+		return 'c';
+	}
+	newGame(){
+		this.turnNumber = 0;
+		this.xTurn = true;
+		this.board = this.board.resetBoard();
+	}
 }
 
-
-module.exports.insert = insert;
-module.exports.board = board;
-module.exports.gameOver = gameOver;
-module.exports.setBoard = setBoard;
-module.exports.newGame = newGame;
+module.exports = Tic;
