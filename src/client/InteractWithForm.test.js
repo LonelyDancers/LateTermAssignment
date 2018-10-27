@@ -6,10 +6,13 @@ describe("lonelydancers.herokuapp.com", () => {
     //let url = "localhost:8080";
 
     beforeEach(async () => {
-        browser = await puppeteer.launch({ headless: false, slowMo: 0 });
+        browser = await puppeteer.launch({
+          headless: true,
+          slowMo: 0,
+          args: ['--no-sandbox', '--disable-setuid-sandbox']});
         page = await browser.newPage();
       });
-    
+
       afterEach(() => {
         browser.close();
       });
@@ -20,18 +23,18 @@ describe("lonelydancers.herokuapp.com", () => {
         await page.click('#tr1 > td:nth-child(1)');
         const text = await page.evaluate( () => Array.from( document.querySelectorAll( '#tr1 > td:nth-child(1)' ), element => element.textContent ) );
         expect(text[0]).toBe("X");
-    
+
       });*/
-      
+
       test("Should click on last table element", async () => {
         jest.setTimeout(30000);
         const response =  await page.goto(url, {waitUntil : ['load', 'domcontentloaded']});
         await page.click('#tr3 > td:nth-child(3)');
         const text = await page.evaluate( () => Array.from( document.querySelectorAll( '#tr3 > td:nth-child(3)' ), element => element.textContent ) );
         expect(text[0]).toBe("X");
-    
+
       });
-      
+
       test("Should write x name to be 'Kjartan'", async () => {
         jest.setTimeout(30000);
         const response =  await page.goto(url, {waitUntil : ['load', 'domcontentloaded']});
@@ -39,7 +42,7 @@ describe("lonelydancers.herokuapp.com", () => {
         const text = await page.evaluate( () => Array.from( document.querySelectorAll( 'body > form > input[type="text"]:nth-child(2)' ), element => element.value ) );
         expect(text[0]).toBe("Kjartan");
       });
-      
+
       test("Should let x win", async () => {
         jest.setTimeout(30000);
         await page.goto(url, {waitUntil : ['load', 'domcontentloaded']});
@@ -54,5 +57,5 @@ describe("lonelydancers.herokuapp.com", () => {
         expect(text[0]).toBe("x Won!");
       });
 
-      
+
 });
