@@ -35,11 +35,7 @@ jobs:
         
       # run tests!
       - run: yarn build
-      - run: yarn start
-      - run: yarn test ./src/logic/tic.test.js
-      - run: yarn test ./src/server/api.test.js
-      - run: yarn test ./app.test.js
-      - run: yarn test ./src/client/InteractWithForm.test.js
+      - run: yarn ci
   deploy:
     docker:
       - image: buildpack-deps:trusty
