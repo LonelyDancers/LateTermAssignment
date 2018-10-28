@@ -30,7 +30,7 @@ describe("lonelydancers.herokuapp.com", () => {
         jest.setTimeout(30000);
         const response =  await page.goto(url, {waitUntil : ['load', 'domcontentloaded']});
         await page.click('#tr3 > td:nth-child(3)');
-        await page.waitForFunction('document.querySelectorAll( "#tr3 > td:nth-child(3)" ).value != ""');
+        await page.waitForFunction('document.getElementsByClassName("tdelement9").innerHTML != ""');
         // await page.waitFor(1*1000);
         const text = await page.evaluate( () => Array.from( document.querySelectorAll( '#tr3 > td:nth-child(3)' ), element => element.textContent ) );
         expect(text[0]).toBe("X");
@@ -55,7 +55,7 @@ describe("lonelydancers.herokuapp.com", () => {
         await page.click('#tr1 > td:nth-child(3)');
         console.log("This test");
         const text = await page.evaluate( () => Array.from( document.querySelectorAll( '#winnerAlert' ), element => element.textContent ) );
-        await page.waitForFunction('document.querySelectorAll( "#winnerAlert" ).value != ""');
+        await page.waitForFunction('document.getElementsByClassName("winnerAlert").innerHTML != ""');
         expect(text[0]).toBe("x Won!");
       });
 
