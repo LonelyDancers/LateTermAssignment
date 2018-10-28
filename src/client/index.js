@@ -6,53 +6,16 @@ const path = require("path");
 $('td').click(function(){
     var index =  $('td').index(this);
     (async () => {
-      const gameOverChar = await fetch('api/tic/gameover')
-      .then((resp) => resp.json()) // Transform the data into json
-      .then(function(data) {
-          return data.GameStatus;
-      })
-      .catch(function(error) {
-          console.log("error getting board");
-          return;
-          // If there is any error you will catch them here
-      });
-      const resultChar = await gameOverChar;
+      const resultChar = await getGameOver();
       if (resultChar != 'c')
         return;
-        const rawResponse = await fetch('api/tic/getboard')
-        .then((resp) => resp.json()) // Transform the data into json
-        .then(function(data) {
-            return data.theBoard;
-        })
-        .catch(function(error) {
-            console.log("error getting board");
-            return;
-            // If there is any error you will catch them here
-        });
-        const content = await rawResponse;
         let data = {
             "theIndex" : index
         }
-        const rawResponse2 = await fetch("api/tic/insert", {
-            method: 'POST', // or 'PUT'
-            body: JSON.stringify(data), // data can be `string` or {object}!
-            headers:{
-              'Content-Type': 'application/json'
-            }
-          }).then(res => res.json())
-          .then(function(data) {
-                return data;
-            })
-            .catch(function(error) {
-                console.log("error posting");
-                return;
-                // If there is any error you will catch them here
-            });
-        const content2 = await rawResponse2;
+        const content2 = await postInsert(data);
         var valid = content2.valid;
         var isXTurn = content2.xTurn;
-        if(valid)
-        {
+        if(valid) {
             var turn = 'X';
             var insertedChar = 'O';
             if(isXTurn){
@@ -62,17 +25,7 @@ $('td').click(function(){
           $(this).html(turn);
           $('#turn').html(insertedChar + ", it's your turn!");
         }
-        const rawResponse3 = await fetch('api/tic/gameover')
-        .then((resp) => resp.json()) // Transform the data into json
-        .then(function(data) {
-            return data.GameStatus;
-        })
-        .catch(function(error) {
-            console.log("error getting board");
-            return;
-            // If there is any error you will catch them here
-        });
-        const char = await rawResponse3;
+        const char = await getGameOver();
         if( char == 'd') {
             alert("it's a draw!");//save draw to Score Board
         }
@@ -104,4 +57,35 @@ async function resetGame() {
   const content2 = await rawResponse2;
 };
 
+async function getGameOver() {
+  const gameOverChar = await fetch('api/tic/gameover')
+  .then((resp) => resp.json()) // Transform the data into json
+  .then(function(data) {
+      return data.GameStatus;
+  })
+  .catch(function(error) {
+      console.log("error getting board");
+      return;
+      // If there is any error you will catch them here
+  });
+  return gameOverChar;
+}
+async function postInsert(data) {
+  const rawResponse2 = await fetch("api/tic/insert", {
+    method: 'POST', // or 'PUT'
+    body: JSON.stringify(data), // data can be `string` or {object}!
+    headers:{
+      'Content-Type': 'application/json'
+    }
+  }).then(res => res.json())
+  .then(function(data) {
+      return data;
+  })
+  .catch(function(error) {
+    console.log("error posting");
+    return;
+    // If there is any error you will catch them here
+  });
+  return rawResponse2;
+}
 $(window).load(resetGame());
