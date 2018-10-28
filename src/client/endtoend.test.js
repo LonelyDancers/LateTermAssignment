@@ -44,7 +44,7 @@ describe("lonelydancerstage.herokuapp.com", () => {
         await page.click('#td2');
         await page.click('#td5');
         await page.click('#td3');
-        await page.waitForFunction('document.getElementById("turn").innerHTML != ""');
+        await page.waitForFunction('document.getElementById("turn").innerHTML[1] != ","');
         let text = await page.$eval('#turn', (elem) => {
             return elem.innerHTML;
         });
