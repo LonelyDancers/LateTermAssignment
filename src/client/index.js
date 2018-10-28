@@ -37,15 +37,17 @@ $('td').click(function(){
             });
         const content2 = await rawResponse2;
         var valid = content2.valid;
-        var isXTurn = !content2.xTurn;
+        var isXTurn = content2.xTurn;
         if(valid)
         {
-            var turn = 'O';
+            var turn = 'X';
+            var insertedChar = 'O';
             if(isXTurn){
-                turn = 'X';
+                turn = 'O';
+                insertedChar = 'X'
             }
-        $(this).html(turn);
-        isXTurn = !isXTurn;
+          $(this).html(turn);
+          $('#turn').html(insertedChar + ", it's your turn!");
         }
         else{
             alert('This space is occupied, please try another rate.');
@@ -66,7 +68,7 @@ $('td').click(function(){
         }
         else if(char == 'x' || char == 'o') {
             alert(char + ' won!');
-        } 
+        }
     })();
     /* let data = {
         "whosTurn": isXTurn,
@@ -81,7 +83,7 @@ $('td').click(function(){
         }
       }).then(res => res.json())
       .then(response => alert('Success:', JSON.stringify(response)))
-      .catch(error => alert('Error:', error)); 
+      .catch(error => alert('Error:', error));
     var valid = tic.insert(index, isXTurn);
     if(valid)
     {

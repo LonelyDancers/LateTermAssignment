@@ -9,7 +9,7 @@
     "watch": "jest --watchAll",
     "clean": "rm -rf node_modules",
     "build2": "webpack && node server",
-    "build": " webpack && jest --colors ",
+    "build": "webpack && jest --colors",
     "buildandrun": "webpack && jest --colors && node server"
   },
   "repository": {
