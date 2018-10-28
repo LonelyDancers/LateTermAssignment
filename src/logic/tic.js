@@ -51,6 +51,9 @@ class Tic {
 				return 'd';
 		return 'c';
 	}
+	getisXTurn(){
+		return this.xTurn;
+	}
 	newGame(){
 		this.turnNumber = 0;
 		this.xTurn = true;
