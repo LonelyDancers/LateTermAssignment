@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1540764081422" clover="3.2.0">
-  <project timestamp="1540764081422" name="All files">
+<coverage generated="1540767702519" clover="3.2.0">
+  <project timestamp="1540767702519" name="All files">
     <metrics statements="87" coveredstatements="77" conditionals="41" coveredconditionals="39" methods="23" coveredmethods="20" elements="151" coveredelements="136" complexity="0" loc="87" ncloc="87" packages="2" files="3" classes="3">
       <package name="logic">
         <metrics statements="52" coveredstatements="49" conditionals="41" coveredconditionals="39" methods="14" coveredmethods="13"/>
-        <file name="board.js" path="C:\Users\Tomas\Documents\HR\3. onn tolvunarfraedi\Hugbúnaðarfræði\LateTermAssignment\LateTermAssignment\src\logic\board.js">
+        <file name="board.js" path="/Users/tomas/Documents/HR/3onntolvunarfræði/hugb/LateTermAssignment/src/logic/board.js">
           <metrics statements="16" coveredstatements="13" conditionals="10" coveredconditionals="8" methods="6" coveredmethods="5"/>
           <line num="3" count="21" type="stmt"/>
           <line num="7" count="2" type="stmt"/>
@@ -23,7 +23,7 @@
           <line num="34" count="0" type="stmt"/>
           <line num="38" count="2" type="stmt"/>
         </file>
-        <file name="tic.js" path="C:\Users\Tomas\Documents\HR\3. onn tolvunarfraedi\Hugbúnaðarfræði\LateTermAssignment\LateTermAssignment\src\logic\tic.js">
+        <file name="tic.js" path="/Users/tomas/Documents/HR/3onntolvunarfræði/hugb/LateTermAssignment/src/logic/tic.js">
           <metrics statements="36" coveredstatements="36" conditionals="31" coveredconditionals="31" methods="8" coveredmethods="8"/>
           <line num="1" count="2" type="stmt"/>
           <line num="8" count="20" type="stmt"/>
@@ -65,7 +65,7 @@
       </package>
       <package name="server">
         <metrics statements="35" coveredstatements="28" conditionals="0" coveredconditionals="0" methods="9" coveredmethods="7"/>
-        <file name="api.js" path="C:\Users\Tomas\Documents\HR\3. onn tolvunarfraedi\Hugbúnaðarfræði\LateTermAssignment\LateTermAssignment\src\server\api.js">
+        <file name="api.js" path="/Users/tomas/Documents/HR/3onntolvunarfræði/hugb/LateTermAssignment/src/server/api.js">
           <metrics statements="35" coveredstatements="28" conditionals="0" coveredconditionals="0" methods="9" coveredmethods="7"/>
           <line num="3" count="1" type="stmt"/>
           <line num="4" count="1" type="stmt"/>
