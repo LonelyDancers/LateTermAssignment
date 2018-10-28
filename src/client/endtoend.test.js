@@ -7,7 +7,7 @@ describe("lonelydancerstage.herokuapp.com", () => {
 
     beforeEach(async () => {
         browser = await puppeteer.launch({
-          headless: false,
+          headless: true,
           slowMo: 0,
           args: ['--no-sandbox', '--disable-setuid-sandbox']});
         page = await browser.newPage();

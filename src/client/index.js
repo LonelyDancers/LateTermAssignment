@@ -61,7 +61,7 @@ async function getGameOver() {
   const gameOverChar = await fetch('api/tic/gameover')
   .then((resp) => resp.json()) // Transform the data into json
   .then(function(data) {
-      return data.GameStatus;
+      return data.gameStatus;
   })
   .catch(function(error) {
       console.log("error getting board");

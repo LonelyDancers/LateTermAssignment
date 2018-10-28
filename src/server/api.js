@@ -20,14 +20,15 @@ app.get("/tic/getboard", (req, res) =>  {
 app.post("/tic/insert", function(req, res) {
 	var index = req.body.theIndex;
 	var valid = tic.insert(index);
-	res.send(JSON.stringify({ "valid": valid, "xTurn" : tic.getisXTurn()}, null, 3));
+	res.setHeader('Content-Type', 'application/json');
+	res.status(200).send(JSON.stringify({ "valid": valid, "xTurn" : tic.getisXTurn()}, null, 3));
 });
 
 //api GET for /tic/gameover/ returns a json of the gamestatus
 //'c' for continue, 'd' for draw, 'x' for x 
 app.get("/tic/gameover", (req, res) =>  {
 	res.setHeader('Content-Type', 'application/json');
-    res.status(200).send(JSON.stringify({ GameStatus: tic.gameOver() }, null, 3));
+    res.status(200).send(JSON.stringify({ gameStatus: tic.gameOver() }, null, 3));
 	//res.status(200).json((JSON.stringify({ a: tic.getBoard() }, null, 3)));
 });
 
@@ -38,4 +39,24 @@ app.post("/tic/newgame", function(req, res) {
 	res.send(JSON.stringify({ "reset": "true"}, null, 3));
 });
 
+//api GET for /tic/turn returns a json containing the turnnumber
+app.get("/tic/turnnumber", (req, res) =>  {
+	res.setHeader('Content-Type', 'application/json');
+    res.status(200).send(JSON.stringify({ turn: tic.getTurnNumber() }, null, 3));
+});
+
+app.get("/", (req, res) => {
+	res.status(405).send({ error: "GET method not allowed, try OPTIONS." });
+  });
+  
+app.options("/", (req, res) => {
+const options = {
+	options: { get: ["/api/tic/newgame", "/api/tic/getboard"] }
+};
+res.status(200).send(options);
+});
+// /tic tell what apis are available
+app.get("/tic", (req, res) => {
+	res.status(200).send("/tic/turnnumber shows the turn number. /tic/gameover shows if game is over. /tic/insert element into the board takes theIndex value. /tic/newgame resets the game");
+});
 module.exports = app;

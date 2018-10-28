@@ -18,8 +18,16 @@ describe("GET api/tic/gameover endpoint", () => {
 });
 
 describe("Check if /api/tic/gameover contains GameOver in body", () => {
-    it("gameover should return a 200 OK status code", async () => {
+    it("gameover should return contain gameover", async () => {
         const res = await request(app).get("/api/tic/gameover");
-        expect(res.body).toHaveProperty('GameStatus');
+        expect(res.body).toHaveProperty('gameStatus');
     });
 });
+
+describe("Check if /api/tic/turnnumber contains turnnumber in body", () => {
+    it("gameover should return contain gameover", async () => {
+        const res = await request(app).get("/api/tic/turnnumber");
+        expect(res.body).toHaveProperty('turn');
+    });
+});
+

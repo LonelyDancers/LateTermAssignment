@@ -5,12 +5,14 @@ const express = require("express");
 const app = express();
 const api = require("./src/server/api");
 
-app.use(express.static(path.join(__dirname, "dist")));
-app.use("/coverage", express.static(path.join(__dirname, "coverage/lcov-report")));
 
 // For all queries to localhost:8080/api/...
 // use the API router (see below)
 app.use("/api", api);
+app.use("/game", express.static(path.join(__dirname, "dist")));
+app.use("/coverage", express.static(path.join(__dirname, "coverage/lcov-report")));
+
+
 
 // For any other route (URL) just send an error
 app.get("*", (req, res) => {

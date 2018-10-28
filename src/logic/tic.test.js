@@ -57,6 +57,25 @@ it("Should return the same board that was inserted", () => {
 	expect(testGetBoard(['','','x','','','','','',''])).toEqual(['','','x','','','','','','']);
 });
 
+it("Should 4 as the turn number", () => {
+	function testTurnNumber(theBoard){
+		tic = new Tic;
+		tic.setBoard(theBoard);
+		return tic.getTurnNumber();
+	}
+	expect(testTurnNumber(['','o','x','','','x','o','',''])).toEqual(4);
+});
+
+
+it("Should false since it is Os turn after 3 moves", () => {
+	function testWhosTurn(theBoard){
+		tic = new Tic;
+		tic.setBoard(theBoard);
+		return tic.getisXTurn();
+	}
+	expect(testWhosTurn(['','o','x','','','x','','',''])).toEqual(false);
+});
+
 it("Should return x when x wins with row 1", () => {
 	function testGameOver(theBoard){
 		tic = new Tic;
