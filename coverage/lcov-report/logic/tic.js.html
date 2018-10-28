@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for logic/tic.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="..\prettify.css" />
+    <link rel="stylesheet" href="..\base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(..\sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="..\index.html">All files</a> / <a href="index.html">logic</a> tic.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>36/36</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>31/31</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>8/8</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>36/36</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75</td><td class="line-coverage quiet"><span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">20x</span>
+<span class="cline-any cline-yes">20x</span>
+<span class="cline-any cline-yes">20x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">30x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">var Board = require('./board');
+&nbsp;
+//if the index is not legal it returns false.
+//if the index is already full it returns false
+//if the move is legal the move is inserted and turnnumber is incremented
+class Tic {
+	constructor(){
+		this.turnNumber = 0;
+		this.xTurn = true; //keep track of who's turn it is. If it's X turn true else false
+		this.board = new Board();
+	}
+	insert(index) {
+		//check if both the area clicked is a playable area and make sure it is empty
+		if(index &lt; 0 || index &gt; 8 || this.board.getIndex(index) != '') {
+			return false;
+		} //insert X or O into the table
+		if(this.xTurn){
+			this.xTurn = !this.xTurn;
+			this.board.setIndex(index, 'x');
+		}
+		else{
+			this.xTurn = !this.xTurn;
+			this.board.setIndex(index, 'o');
+		}
+		//make sure to keep track of the turn numbers so that we know if the game
+		//ends in a draw
+		this.turnNumber++;
+		return true;
+	}
+	//start a game in the middle
+	setBoard(newBoard){
+		this.turnNumber = this.board.setBoard(newBoard);
+		this.xTurn = true;
+		if(this.turnNumber % 2 == 1)
+		this.xTurn = false;
+	}
+	getCurrentBoard() {
+		return this.board;
+	}
+	getTurnNumber() {
+		return this.turnNumber;
+	}
+	gameOver() {
+		for (var i = 0; i &lt; 3; i++) {
+			//check for three in a row vertically 
+			if (this.board.getIndex(i) != '' &amp;&amp; this.board.getIndex(i) == this.board.getIndex(i + 3) &amp;&amp; this.board.getIndex(i) == this.board.getIndex(i + 6))
+				return this.board.getIndex(i);
+			//check for three in a row horizontally
+			if (this.board.getIndex(i * 3) != '' &amp;&amp; this.board.getIndex(i * 3) == this.board.getIndex(i * 3 + 1) &amp;&amp; this.board.getIndex(i * 3) == this.board.getIndex(i * 3 + 2))
+				return this.board.getIndex(i * 3);
+		}
+		//check for diagonal win
+		if (this.board.getIndex(0) != '' &amp;&amp; this.board.getIndex(0) == this.board.getIndex(4) &amp;&amp; this.board.getIndex(0) == this.board.getIndex(8))
+			return this.board.getIndex(0);
+		if (this.board.getIndex(2) != '' &amp;&amp; this.board.getIndex(2) == this.board.getIndex(4) &amp;&amp; this.board.getIndex(2) == this.board.getIndex(6))
+			return this.board.getIndex(2);
+		//if the board is full and there is no winner return draw
+		if (this.turnNumber &gt;= 9) 
+				return 'd';
+		return 'c';
+	}
+	
+	getisXTurn(){
+		return this.xTurn;
+	}
+	//reset the game
+	newGame(){ 
+		this.turnNumber = 0;
+		this.xTurn = true;
+		this.board = new Board();
+	}
+}
+&nbsp;
+module.exports = Tic;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Sun Oct 28 2018 22:01:21 GMT+0000 (Greenwich Standard Time)
+</div>
+</div>
+<script src="..\prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="..\sorter.js"></script>
+</body>
+</html>
