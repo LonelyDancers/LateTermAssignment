@@ -31,9 +31,16 @@ $('td').click(function(){
         }
         const char = await getGameOver(); //check again if the game is over
         if( char == 'd') {
+          const char = await getGameOver();
+          if (char == 'c') {
+            $('#turn').html(insertedChar + ", it's your turn!");
+          }
+        }
+        const char = await getGameOver();
+        if (char == 'd') {
           $('#turn').html("It's a draw!");
         }
-        else if(char == 'x' || char == 'o') {
+        else if (char == 'x' || char == 'o') {
           $('#turn').html(char.toUpperCase() + " is the winner!");
         }
     })();
