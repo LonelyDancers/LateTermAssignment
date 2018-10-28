@@ -26,7 +26,7 @@ Below are links to our projects GitHub Pages where you will find all documentati
 
 ## Authors
 
-* [Kjartan Már Andersen](https://github.com/kjartananersen)
+* [Kjartan Már Andersen](https://github.com/kjartandersen)
 * [Kolfinna Jónsdóttir](https://github.com/koffa95)
 * [Sindri Andrason](https://github.com/mindricity)
 * [Tómas Hrafn Jóhannesson](https://github.com/tomash14)
