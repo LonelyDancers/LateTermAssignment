@@ -27,16 +27,12 @@ $('td').click(function(){
             }
           $(this).html(turn);
           //write out who's turn it is
-          $('#turn').html(insertedChar + ", it's your turn!");
-        }
-        const char = await getGameOver(); //check again if the game is over
-        if( char == 'd') {
           const char = await getGameOver();
           if (char == 'c') {
             $('#turn').html(insertedChar + ", it's your turn!");
           }
         }
-        const char = await getGameOver();
+        const char = await getGameOver(); //check again if the game is over
         if (char == 'd') {
           $('#turn').html("It's a draw!");
         }
