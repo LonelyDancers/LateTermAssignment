@@ -1,34 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1540764081422" clover="3.2.0">
-  <project timestamp="1540764081422" name="All files">
-    <metrics statements="87" coveredstatements="77" conditionals="41" coveredconditionals="39" methods="23" coveredmethods="20" elements="151" coveredelements="136" complexity="0" loc="87" ncloc="87" packages="2" files="3" classes="3">
+<coverage generated="1540766463008" clover="3.2.0">
+  <project timestamp="1540766463008" name="All files">
+    <metrics statements="87" coveredstatements="80" conditionals="41" coveredconditionals="41" methods="23" coveredmethods="21" elements="151" coveredelements="142" complexity="0" loc="87" ncloc="87" packages="2" files="3" classes="3">
       <package name="logic">
-        <metrics statements="52" coveredstatements="49" conditionals="41" coveredconditionals="39" methods="14" coveredmethods="13"/>
+        <metrics statements="52" coveredstatements="52" conditionals="41" coveredconditionals="41" methods="14" coveredmethods="14"/>
         <file name="board.js" path="C:\Users\Tomas\Documents\HR\3. onn tolvunarfraedi\Hugbúnaðarfræði\LateTermAssignment\LateTermAssignment\src\logic\board.js">
-          <metrics statements="16" coveredstatements="13" conditionals="10" coveredconditionals="8" methods="6" coveredmethods="5"/>
-          <line num="3" count="21" type="stmt"/>
-          <line num="7" count="2" type="stmt"/>
+          <metrics statements="16" coveredstatements="16" conditionals="10" coveredconditionals="10" methods="6" coveredmethods="6"/>
+          <line num="3" count="26" type="stmt"/>
+          <line num="7" count="3" type="stmt"/>
           <line num="12" count="13" type="stmt"/>
           <line num="13" count="13" type="stmt"/>
           <line num="14" count="13" type="stmt"/>
           <line num="15" count="117" type="cond" truecount="2" falsecount="0"/>
           <line num="16" count="75" type="stmt"/>
           <line num="18" count="13" type="stmt"/>
-          <line num="23" count="5" type="cond" truecount="3" falsecount="1"/>
-          <line num="24" count="0" type="stmt"/>
-          <line num="25" count="5" type="stmt"/>
-          <line num="29" count="191" type="cond" truecount="3" falsecount="1"/>
-          <line num="30" count="0" type="stmt"/>
-          <line num="31" count="191" type="stmt"/>
-          <line num="34" count="0" type="stmt"/>
-          <line num="38" count="2" type="stmt"/>
+          <line num="23" count="9" type="cond" truecount="4" falsecount="0"/>
+          <line num="24" count="1" type="stmt"/>
+          <line num="25" count="8" type="stmt"/>
+          <line num="29" count="193" type="cond" truecount="4" falsecount="0"/>
+          <line num="30" count="1" type="stmt"/>
+          <line num="31" count="192" type="stmt"/>
+          <line num="34" count="1" type="stmt"/>
+          <line num="38" count="4" type="stmt"/>
         </file>
         <file name="tic.js" path="C:\Users\Tomas\Documents\HR\3. onn tolvunarfraedi\Hugbúnaðarfræði\LateTermAssignment\LateTermAssignment\src\logic\tic.js">
           <metrics statements="36" coveredstatements="36" conditionals="31" coveredconditionals="31" methods="8" coveredmethods="8"/>
-          <line num="1" count="2" type="stmt"/>
-          <line num="8" count="20" type="stmt"/>
-          <line num="9" count="20" type="stmt"/>
-          <line num="10" count="20" type="stmt"/>
+          <line num="1" count="3" type="stmt"/>
+          <line num="8" count="21" type="stmt"/>
+          <line num="9" count="21" type="stmt"/>
+          <line num="10" count="21" type="stmt"/>
           <line num="14" count="8" type="cond" truecount="5" falsecount="0"/>
           <line num="15" count="3" type="stmt"/>
           <line num="17" count="5" type="cond" truecount="2" falsecount="0"/>
@@ -60,48 +60,48 @@
           <line num="68" count="1" type="stmt"/>
           <line num="69" count="1" type="stmt"/>
           <line num="70" count="1" type="stmt"/>
-          <line num="74" count="2" type="stmt"/>
+          <line num="74" count="3" type="stmt"/>
         </file>
       </package>
       <package name="server">
         <metrics statements="35" coveredstatements="28" conditionals="0" coveredconditionals="0" methods="9" coveredmethods="7"/>
         <file name="api.js" path="C:\Users\Tomas\Documents\HR\3. onn tolvunarfraedi\Hugbúnaðarfræði\LateTermAssignment\LateTermAssignment\src\server\api.js">
           <metrics statements="35" coveredstatements="28" conditionals="0" coveredconditionals="0" methods="9" coveredmethods="7"/>
-          <line num="3" count="1" type="stmt"/>
-          <line num="4" count="1" type="stmt"/>
-          <line num="5" count="1" type="stmt"/>
-          <line num="6" count="1" type="stmt"/>
-          <line num="7" count="1" type="stmt"/>
-          <line num="9" count="1" type="stmt"/>
-          <line num="12" count="1" type="stmt"/>
+          <line num="3" count="2" type="stmt"/>
+          <line num="4" count="2" type="stmt"/>
+          <line num="5" count="2" type="stmt"/>
+          <line num="6" count="2" type="stmt"/>
+          <line num="7" count="2" type="stmt"/>
+          <line num="9" count="2" type="stmt"/>
+          <line num="12" count="2" type="stmt"/>
           <line num="13" count="1" type="stmt"/>
           <line num="14" count="1" type="stmt"/>
-          <line num="20" count="1" type="stmt"/>
+          <line num="20" count="2" type="stmt"/>
           <line num="21" count="0" type="stmt"/>
           <line num="22" count="0" type="stmt"/>
           <line num="23" count="0" type="stmt"/>
           <line num="24" count="0" type="stmt"/>
-          <line num="29" count="1" type="stmt"/>
+          <line num="29" count="2" type="stmt"/>
           <line num="30" count="2" type="stmt"/>
           <line num="31" count="2" type="stmt"/>
-          <line num="36" count="1" type="stmt"/>
+          <line num="36" count="2" type="stmt"/>
           <line num="37" count="0" type="stmt"/>
           <line num="38" count="0" type="stmt"/>
           <line num="39" count="0" type="stmt"/>
-          <line num="43" count="1" type="stmt"/>
+          <line num="43" count="2" type="stmt"/>
           <line num="44" count="1" type="stmt"/>
           <line num="45" count="1" type="stmt"/>
-          <line num="49" count="1" type="stmt"/>
+          <line num="49" count="2" type="stmt"/>
           <line num="50" count="1" type="stmt"/>
-          <line num="53" count="1" type="stmt"/>
+          <line num="53" count="2" type="stmt"/>
           <line num="54" count="1" type="stmt"/>
           <line num="57" count="1" type="stmt"/>
-          <line num="61" count="1" type="stmt"/>
+          <line num="61" count="2" type="stmt"/>
           <line num="62" count="1" type="stmt"/>
-          <line num="66" count="1" type="stmt"/>
+          <line num="66" count="2" type="stmt"/>
           <line num="67" count="1" type="stmt"/>
           <line num="70" count="1" type="stmt"/>
-          <line num="72" count="1" type="stmt"/>
+          <line num="72" count="2" type="stmt"/>
         </file>
       </package>
     </metrics>

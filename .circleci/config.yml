@@ -79,8 +79,7 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
 
       # run tests!
-      - run: yarn build
-      - run: yarn test
+      - run: yarn testPuppeteer
 
   deploy-to-production:
     docker:

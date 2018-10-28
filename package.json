@@ -4,19 +4,17 @@
   "description": "tictactoe in node",
   "main": "tic.js",
   "scripts": {
-    "start-server": "npm start",
     "testPuppeteer": "jest --colors ./src/client/endtoend.test.js",
-    "ci": "start-server-and-test start-server http://localhost:8080 testPuppeteer",
     "start": "node server",
-    "deploy": "jest ./src/logic/tic.test.js ./src/server/api.test.js && git add coverage && git commit -m",
+    "deploy": "jest --colors ./src/logic/tic.test.js ./src/server/api.test.js && git add coverage && git commit -m",
     "postdeploy": "git push",
-    "freshbuild": "rm -rf node_modules && npm install && webpack && node server",
+    "freshbuild": "npm run clean && npm install && webpack && node server",
     "test": "jest --colors",
     "watch": "jest --watchAll",
     "clean": "rm -rf node_modules",
-    "build2": "webpack && node server",
+    "buildandrun": "webpack && node server",
     "build": " webpack",
-    "buildandrun": "webpack && jest --colors && node server",
+    "buildtestrun": "webpack && jest --colors ./src/logic/tic.test.js ./src/server/api.test.js  && node server",
     "heroku-postbuild": "webpack -p"
   },
   "repository": {
