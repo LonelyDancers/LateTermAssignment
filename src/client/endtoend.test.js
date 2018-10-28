@@ -2,8 +2,8 @@ const puppeteer = require("puppeteer");
 
 describe("lonelydancers.herokuapp.com", () => {
     let browser, page;
-    //let url = "https://lonelydancers.herokuapp.com";
-    let url = "localhost:8080";
+    let url = "https://lonelydancerstage.herokuapp.com";
+    // let url = "localhost:8080";
 
     beforeEach(async () => {
         browser = await puppeteer.launch({
