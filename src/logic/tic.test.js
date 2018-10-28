@@ -1,5 +1,6 @@
 const Tic = require("./tic");
 
+//making sure the insert function doesn't allow negatives
 it("should return false for less than zero", () => {
 	function testInsert(){
 		tic = new Tic;
@@ -8,7 +9,7 @@ it("should return false for less than zero", () => {
 	}
 	expect(testInsert()).toBe(false);
 });
-
+//makes sure the insert function works normally for correct input
 it("should return true for valid input", () => {
 	function testInsert(){
 		tic = new Tic;
@@ -18,7 +19,7 @@ it("should return true for valid input", () => {
 	}
 	expect(testInsert()).toBe(true);
 });
-
+//makes sure the index cannot be outside the board
 it("should return false for invalid input", () => {
 	function testInsert(){
 		tic = new Tic;
@@ -27,7 +28,7 @@ it("should return false for invalid input", () => {
 	}
 	expect(testInsert()).toBe(false);
 });
-
+//make sure a cell that has already been used cannot be overwritten
 it("should return false for inserting on full cell", () => {
 	function testInsertMany(){
 		tic = new Tic;
@@ -38,7 +39,7 @@ it("should return false for inserting on full cell", () => {
 	expect(testInsertMany()).toBe(false);
 });
 
-
+//make sure the correct symbol is inserted into the right cell
 it("should return X which was inserted", () => {
 	function testXchar(){
 		tic = new Tic;
@@ -47,7 +48,7 @@ it("should return X which was inserted", () => {
 	}
 	expect(testXchar()).toBe('x');
 });
-
+//make sure the board is correctly stored in the memory
 it("Should return the same board that was inserted", () => {
 	function testGetBoard(theBoard){
 		tic = new Tic;
@@ -56,7 +57,9 @@ it("Should return the same board that was inserted", () => {
 	}
 	expect(testGetBoard(['','','x','','','','','',''])).toEqual(['','','x','','','','','','']);
 });
-
+//make sure that the gameOver function works correctly.
+//make sure it selects the right winner.
+//testing row 1
 it("Should return x when x wins with row 1", () => {
 	function testGameOver(theBoard){
 		tic = new Tic;
@@ -65,7 +68,7 @@ it("Should return x when x wins with row 1", () => {
 	}
 	expect(testGameOver(['x','x','x','o','o','x','x','o','o'])).toEqual('x');
 });
-
+//make sure gameOver also works for 'o' and testing row 2
 it("Should return o when o wins with row 2", () => {
 	function testGameOver(theBoard){
 		tic = new Tic;
@@ -74,7 +77,7 @@ it("Should return o when o wins with row 2", () => {
 	}
 	expect(testGameOver(['x','o','x','o','o','o','x','x',''])).toEqual('o');
 });
-
+//testing row 3
 it("Should return x when x wins with row 3", () => {
 	function testGameOver(theBoard){
 		tic = new Tic;
@@ -83,7 +86,7 @@ it("Should return x when x wins with row 3", () => {
 	}
 	expect(testGameOver(['x','o','','','o','o','x','x','x'])).toEqual('x');
 });
-
+/// testimg column 1
 it("Should return o when o wins with column 1", () => {
 	function testGameOver(theBoard){
 		tic = new Tic;
@@ -92,7 +95,7 @@ it("Should return o when o wins with column 1", () => {
 	}
 	expect(testGameOver(['o','x','','o','x','x','o','',''])).toEqual('o');
 });
-
+//testing column 2
 it("Should return x when o wins with column 2", () => {
 	function testGameOver(theBoard){
 		tic = new Tic;
@@ -101,7 +104,7 @@ it("Should return x when o wins with column 2", () => {
 	}
 	expect(testGameOver(['x','x','o','o','x','','o','x',''])).toEqual('x');
 });
-
+//testing column 3
 it("Should return o when o wins with column 3", () => {
 	function testGameOver(theBoard){
 		tic = new Tic;
@@ -110,7 +113,7 @@ it("Should return o when o wins with column 3", () => {
 	}
 	expect(testGameOver(['','x','o','x','x','o','','','o'])).toEqual('o');
 });
-
+//testing diagonal
 it("Should return x when x wins with \\ diagonal", () => {
 	function testGameOver(theBoard){
 		tic = new Tic;
@@ -119,7 +122,7 @@ it("Should return x when x wins with \\ diagonal", () => {
 	}
 	expect(testGameOver(['x','','','','x','o','','o','x'])).toEqual('x');
 });
-
+//testing the other diagonal
 it("Should return o when o wins with / diagonal", () => {
 	function testGameOver(theBoard){
 		tic = new Tic;
@@ -128,7 +131,7 @@ it("Should return o when o wins with / diagonal", () => {
 	}
 	expect(testGameOver(['','','o','x','o','','o','x','x'])).toEqual('o');
 });
-
+//testing that the gameOver function can recognize a draw
 it("Should return d when the game is a draw", () => {
 	function testGameOver(theBoard){
 		tic = new Tic;
@@ -137,7 +140,7 @@ it("Should return d when the game is a draw", () => {
 	}
 	expect(testGameOver(['x','o','x','x','o','o','o','x','x'])).toEqual('d');
 });
-
+//testing that the gameOver function returns the correct value after checking
 it("Should return c when the game should continue", () => {
 	function testGameOver(theBoard){
 		tic = new Tic;
@@ -146,8 +149,8 @@ it("Should return c when the game should continue", () => {
 	}
 	expect(testGameOver(['x','o','x','o','','','','',''])).toEqual('c');
 });
-
-it("Should return an empty board", () => {
+//testing the newGame function
+it("Should return turn 0 for a new game", () => {
 	function testNewGame(){
 		tic = new Tic;
 		tic.insert(1,true);

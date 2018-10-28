@@ -3,18 +3,21 @@ const api = require("../logic/tic.js");
 const styles = require("../styles/styles.css");
 const path = require("path");
 
+//insert x/o into correct cell on click
 $('td').click(function(){
     var index =  $('td').index(this);
+
     (async () => {
-      const resultChar = await getGameOver();
+      const resultChar = await getGameOver(); //check if the game is over
       if (resultChar != 'c')
-        return;
+        return; //leave the function if the game is over
         let data = {
             "theIndex" : index
         }
         const content2 = await postInsert(data);
         var valid = content2.valid;
         var isXTurn = content2.xTurn;
+        //if the move is valid insert switch the current player
         if(valid) {
             var turn = 'X';
             var insertedChar = 'O';
@@ -23,9 +26,10 @@ $('td').click(function(){
                 insertedChar = 'X'
             }
           $(this).html(turn);
+          //write out who's turn it is
           $('#turn').html(insertedChar + ", it's your turn!");
         }
-        const char = await getGameOver();
+        const char = await getGameOver(); //check again if the game is over
         if( char == 'd') {
           document.querySelector('#winnerAlert').innerHTML = "It's a draw!";
         }
@@ -34,7 +38,7 @@ $('td').click(function(){
         }
     })();
 });
-
+//if the reset button is clicked reset game and reload the page
 $('#reset').click(function() {
   location.reload();
 });
