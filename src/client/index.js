@@ -1,33 +1,91 @@
 import _ from 'lodash';
-const tic = require("../logic/tic.js");
+const api = require("../logic/tic.js");
 const styles = require("../styles/styles.css");
-var isXTurn = true;
+const path = require("path");
 
 $('td').click(function(){
     var index =  $('td').index(this);
-
-    var valid = tic.insert(index, isXTurn);
-    if(valid)
-    {
-        var turn = 'O';
-        if(isXTurn){
-            turn = 'X';
+    (async () => {
+      const resultChar = await getGameOver();
+      if (resultChar != 'c')
+        return;
+        let data = {
+            "theIndex" : index
         }
-       $(this).html(turn);
-       isXTurn = !isXTurn;
-    }
-    else{
-        alert('This space is occupied, please try another rate.');
-    }
-
-    var char = tic.gameOver();
-    if( char == 'd') {
-        alert("it's a draw!");//save draw to Score Board
-    }
-    else if(char == 'x' || char == 'o') {
-        document.querySelector('#winnerAlert').innerHTML = char + " Won!";
-
-
-        //alert(char, ' won!');
-    }
+        const content2 = await postInsert(data);
+        var valid = content2.valid;
+        var isXTurn = content2.xTurn;
+        if(valid) {
+            var turn = 'X';
+            var insertedChar = 'O';
+            if(isXTurn){
+                turn = 'O';
+                insertedChar = 'X'
+            }
+          $(this).html(turn);
+          $('#turn').html(insertedChar + ", it's your turn!");
+        }
+        const char = await getGameOver();
+        if( char == 'd') {
+            alert("it's a draw!");//save draw to Score Board
+        }
+        else if(char == 'x' || char == 'o') {
+            alert(char + ' won!');
+        }
+    })();
 });
+
+$('#reset').click(function() {
+  location.reload();
+});
+
+async function resetGame() {
+  const rawResponse2 = await fetch("api/tic/newGame", {
+    method: 'POST', // or 'PUT'
+    headers:{
+      'Content-Type': 'application/json'
+    }
+  }).then(res => res.json())
+  .then(function(data) {
+        return data;
+    })
+    .catch(function(error) {
+        console.log("error posting");
+        return;
+        // If there is any error you will catch them here
+    });
+  const content2 = await rawResponse2;
+};
+
+async function getGameOver() {
+  const gameOverChar = await fetch('api/tic/gameover')
+  .then((resp) => resp.json()) // Transform the data into json
+  .then(function(data) {
+      return data.GameStatus;
+  })
+  .catch(function(error) {
+      console.log("error getting board");
+      return;
+      // If there is any error you will catch them here
+  });
+  return gameOverChar;
+}
+async function postInsert(data) {
+  const rawResponse2 = await fetch("api/tic/insert", {
+    method: 'POST', // or 'PUT'
+    body: JSON.stringify(data), // data can be `string` or {object}!
+    headers:{
+      'Content-Type': 'application/json'
+    }
+  }).then(res => res.json())
+  .then(function(data) {
+      return data;
+  })
+  .catch(function(error) {
+    console.log("error posting");
+    return;
+    // If there is any error you will catch them here
+  });
+  return rawResponse2;
+}
+$(window).load(resetGame());
