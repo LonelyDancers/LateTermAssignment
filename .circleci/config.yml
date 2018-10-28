@@ -39,7 +39,7 @@ jobs:
       - run: yarn test ./src/server/api.test.js
       - run: yarn test ./app.test.js
 
-  deploy:
+  deploy-to-staging:
     docker:
       - image: buildpack-deps:trusty
     steps:
@@ -52,7 +52,7 @@ jobs:
       # run puppeteer tests!
       - run: yarn testPuppeteer
 
-  deploy:
+  deploy-to-production:
     docker:
       - image: buildpack-deps:trusty
     steps:
