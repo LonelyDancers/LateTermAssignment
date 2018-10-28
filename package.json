@@ -5,7 +5,7 @@
   "main": "tic.js",
   "scripts": {
     "start-server": "npm start",
-    "testPuppeteer": "jest --colors ./src/client/InteractWithForm.test.js",
+    "testPuppeteer": "jest --colors ./src/client/endtoend.test.js",
     "ci": "start-server-and-test start-server http://localhost:8080 testPuppeteer",
     "start": "node server",
     "test": "jest --colors",
@@ -45,8 +45,7 @@
     "collectCoverage": true,
     "collectCoverageFrom": [
       "src/server/*.{js,jsx}",
-      "src/logic/*.{js,jsx}",
-      "!src/client/"
+      "src/logic/*.{js,jsx}"
     ]
   },
   "dependencies": {
