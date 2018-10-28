@@ -57,6 +57,28 @@ it("Should return the same board that was inserted", () => {
 	}
 	expect(testGetBoard(['','','x','','','','','',''])).toEqual(['','','x','','','','','','']);
 });
+
+
+//returns for as the turn number since 4 moves have been made. Checks that the turnnumber is updated
+it("Should return 4 as the turn number", () => {
+	function testTurnNumber(theBoard){
+		tic = new Tic;
+		tic.setBoard(theBoard);
+		return tic.getTurnNumber();
+	}
+	expect(testTurnNumber(['','o','x','','','x','o','',''])).toEqual(4);
+});
+
+//returns false since it is Os turn. Checks that the isXTurn is updating.  
+it("Should false since it is Os turn after 3 moves", () => {
+	function testWhosTurn(theBoard){
+		tic = new Tic;
+		tic.setBoard(theBoard);
+		return tic.getisXTurn();
+	}
+	expect(testWhosTurn(['','o','x','','','x','','',''])).toEqual(false);
+});
+
 //make sure that the gameOver function works correctly.
 //make sure it selects the right winner.
 //testing row 1

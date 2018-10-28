@@ -16,7 +16,7 @@
 title: Lonely-Dancers
 email:
 description: >- # this means to ignore newlines until "baseurl:"
-  Awesome tic-tac-toe app that will blow your socks off!
+  A JavaScript web app that let's you play the classic game Tic-tac-toe.
 baseurl: "/" # the subpath of your site, e.g. /blog
 url: "https://lonelydancers.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username:
