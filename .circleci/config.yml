@@ -38,7 +38,20 @@ jobs:
       - run: yarn test ./src/logic/tic.test.js
       - run: yarn test ./src/server/api.test.js
       - run: yarn test ./app.test.js
-      - run: yarn ci
+
+  deploy:
+    docker:
+      - image: buildpack-deps:trusty
+    steps:
+      - checkout
+      - run:
+          name: Deploy Master to Heroku
+          command: |
+            git push https://heroku:0ec465b5-7833-43a1-b0e6-93bc38581427@git.heroku.com/lonelydancerstage.git master
+
+      # run puppeteer tests!
+      - run: yarn testPuppeteer
+
   deploy:
     docker:
       - image: buildpack-deps:trusty
