@@ -6,6 +6,19 @@ const path = require("path");
 $('td').click(function(){
     var index =  $('td').index(this);
     (async () => {
+      const gameOverChar = await fetch('api/tic/gameover')
+      .then((resp) => resp.json()) // Transform the data into json
+      .then(function(data) {
+          return data.GameStatus;
+      })
+      .catch(function(error) {
+          console.log("error getting board");
+          return;
+          // If there is any error you will catch them here
+      });
+      const resultChar = await gameOverChar;
+      if (resultChar != 'c')
+        return;
         const rawResponse = await fetch('api/tic/getboard')
         .then((resp) => resp.json()) // Transform the data into json
         .then(function(data) {
@@ -49,9 +62,6 @@ $('td').click(function(){
           $(this).html(turn);
           $('#turn').html(insertedChar + ", it's your turn!");
         }
-        else{
-            alert('This space is occupied, please try another rate.');
-        }
         const rawResponse3 = await fetch('api/tic/gameover')
         .then((resp) => resp.json()) // Transform the data into json
         .then(function(data) {
@@ -73,22 +83,25 @@ $('td').click(function(){
 });
 
 $('#reset').click(function() {
-  (async () => {
-    const rawResponse2 = await fetch("api/tic/newGame", {
-      method: 'POST', // or 'PUT'
-      headers:{
-        'Content-Type': 'application/json'
-      }
-    }).then(res => res.json())
-    .then(function(data) {
-          return data;
-      })
-      .catch(function(error) {
-          console.log("error posting");
-          return;
-          // If there is any error you will catch them here
-      });
-    const content2 = await rawResponse2;
-    location.reload();
-  })();
+  location.reload();
 });
+
+async function resetGame() {
+  const rawResponse2 = await fetch("api/tic/newGame", {
+    method: 'POST', // or 'PUT'
+    headers:{
+      'Content-Type': 'application/json'
+    }
+  }).then(res => res.json())
+  .then(function(data) {
+        return data;
+    })
+    .catch(function(error) {
+        console.log("error posting");
+        return;
+        // If there is any error you will catch them here
+    });
+  const content2 = await rawResponse2;
+};
+
+$(window).load(resetGame());
