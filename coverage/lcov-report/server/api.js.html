@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for server/api.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="..\prettify.css" />
+    <link rel="stylesheet" href="..\base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(..\sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="..\index.html">All files</a> / <a href="index.html">server</a> api.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">80% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>28/35</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/0</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">77.78% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>7/9</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">80% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>28/35</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">// src/api.js
+&nbsp;
+const express = require("express");
+const app = express.Router();
+const Tic = require("../logic/tic");
+var tic = new Tic;
+const bodyParser = require('body-parser');
+&nbsp;
+app.use(bodyParser.json());
+&nbsp;
+//api GET for /tic/getboard returns a JSON of the board.
+app.get("/tic/getboard", (req, res) =&gt;  {
+	res.setHeader('Content-Type', 'application/json');
+    res.status(200).send(JSON.stringify({ theBoard: tic.getCurrentBoard().getBoard()}, null, 3));
+	//res.status(200).json((JSON.stringify({ a: tic.getBoard() }, null, 3)));
+});
+&nbsp;
+//api POST for /tic/insert. Posts an index.
+//returns if the move was valid and returns whos turn it was/
+app.post("/tic/insert", <span class="fstat-no" title="function not covered" >fu</span>nction(req, res) {
+	var index = <span class="cstat-no" title="statement not covered" >req.body.theIndex;</span>
+	var valid = <span class="cstat-no" title="statement not covered" >tic.insert(index);</span>
+<span class="cstat-no" title="statement not covered" >	res.setHeader('Content-Type', 'application/json');</span>
+<span class="cstat-no" title="statement not covered" >	res.status(200).send(JSON.stringify({ "valid": valid, "xTurn" : tic.getisXTurn()}, null, 3));</span>
+});
+&nbsp;
+//api GET for /tic/gameover/ returns a json of the gamestatus
+//'c' for continue, 'd' for draw, 'x' for x 
+app.get("/tic/gameover", (req, res) =&gt;  {
+	res.setHeader('Content-Type', 'application/json');
+    res.status(200).send(JSON.stringify({ gameStatus: tic.gameOver() }, null, 3));
+	//res.status(200).json((JSON.stringify({ a: tic.getBoard() }, null, 3)));
+});
+&nbsp;
+//api post for newgame. Restarts the board, turnnumber and sets xTurn to true;
+app.post("/tic/newgame", <span class="fstat-no" title="function not covered" >fu</span>nction(req, res) {
+<span class="cstat-no" title="statement not covered" >	tic.newGame();</span>
+<span class="cstat-no" title="statement not covered" >	res.status(200);</span>
+<span class="cstat-no" title="statement not covered" >	res.send(JSON.stringify({ "reset": "true"}, null, 3));</span>
+});
+&nbsp;
+//api GET for /tic/turn returns a json containing the turnnumber
+app.get("/tic/turnnumber", (req, res) =&gt;  {
+	res.setHeader('Content-Type', 'application/json');
+    res.status(200).send(JSON.stringify({ turn: tic.getTurnNumber() }, null, 3));
+});
+&nbsp;
+//
+app.get("/", (req, res) =&gt; {
+	res.status(405).send({ error: "GET method not allowed, try OPTIONS." });
+  });
+// /api tells what apis are available  
+app.options("/", (req, res) =&gt; {
+const options = {
+	options: { get: ["/api/tic/newgame", "/api/tic/getboard", "/api/tic/insert", "/api/tic/gamover", "/api/tic/turnnumber"] }
+};
+res.status(200).send(options);
+});
+&nbsp;
+//get shouldnt work only options
+app.get("/tic", (req, res) =&gt; {
+	res.status(405).send({ error: "GET method not allowed, try OPTIONS." });
+  });
+  
+// /tic tell what apis are available
+app.options("/tic", (req, res) =&gt; {
+	const options = {
+		options: { get: ["/api/tic/newgame", "/api/tic/getboard", "/api/tic/insert", "/api/tic/gamover", "/api/tic/turnnumber"] }
+	};
+	res.status(200).send(options);
+	});
+module.exports = app;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Sun Oct 28 2018 22:00:39 GMT+0000 (Greenwich Standard Time)
+</div>
+</div>
+<script src="..\prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="..\sorter.js"></script>
+</body>
+</html>

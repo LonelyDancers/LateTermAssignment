@@ -5,8 +5,7 @@
 dist/index.html
 dist/main.js
 
-### Code coverage docs ###
-coverage/
+
 
 ### Node ###
 # Logs
