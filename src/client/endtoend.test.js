@@ -17,6 +17,7 @@ describe("lonelydancerstage.herokuapp.com", () => {
       });
 
       test("Should click on last table element", async () => {
+<<<<<<< HEAD
         //test to make sure the last cell is clickable
         jest.setTimeout(30000);
         const response =  await page.goto(url, {waitUntil : ['load', 'domcontentloaded']});
@@ -45,13 +46,26 @@ describe("lonelydancerstage.herokuapp.com", () => {
       test("Should write x name to be 'Kjartan'", async () => {
         jest.setTimeout(10000);
         const response =  await page.goto(url);
+>>>>>>> df3ce0d4477f4dd2a5ab550d7ded06b96d40c1e5
         await page.type('body > form > input[type="text"]:nth-child(2)', 'Kjartan');
         const text = await page.evaluate( () => Array.from( document.querySelectorAll( 'body > form > input[type="text"]:nth-child(2)' ), element => element.value ));
         expect(text[0]).toBe("Kjartan");
       });
 
       test("Should let x win", async () => {
+<<<<<<< HEAD
         //check that the game can be won
+        jest.setTimeout(30000);
+        await page.goto(url, {waitUntil : ['load', 'domcontentloaded']});
+        await page.click('#tr1 > td:nth-child(1)');
+        await page.click('#tr2 > td:nth-child(1)');
+        await page.click('#tr1 > td:nth-child(2)');
+        await page.click('#tr2 > td:nth-child(2)');
+        await page.click('#tr1 > td:nth-child(3)');
+        const text = await page.evaluate( () => Array.from( document.querySelectorAll( '#winnerAlert' ), element => element.textContent ) );
+        await page.waitForFunction('document.getElementsByClassName("winnerAlert").innerHTML != ""');
+        expect(text[0]).toBe("x Won!");
+=======
         jest.setTimeout(10000);
         await page.goto(url);
         await page.click('#td1');
