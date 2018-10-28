@@ -8,7 +8,7 @@ permalink: /dev_manual/
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
-### Prerequisites
+## Prerequisites
 
 To gain access to the source please contact one of the project owners.
 
@@ -17,3 +17,16 @@ The project's git repository needs to be cloned with git before being deployed.
 * [Git](https://git-scm.com/) - The source control client used.
 
 * [Node.js](https://nodejs.org/en/download/) - The runtime environment used.
+
+## Project structure
+
+The structure of the project is as follows:
+
+* .circleci - Contains a config.yml for CircleCI.
+* coverage - Contains code coverage.
+* docs - Contains all documentation of the project and files for the layout of the GitHub Pages site.
+* src - Contains client, logic, server and styles folders.
+  * client - Contains end-to-end tests and front end of the app.
+  * logic - Contains all logic regarding the app.
+  * server - Contains the API for the app.
+  * styles - Contains the CSS file that styles the app frontpage.
