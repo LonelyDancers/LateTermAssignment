@@ -14,7 +14,7 @@ Below are links to our projects GitHub Pages where you will find all documentati
 * [GitHub Pages site](https://lonelydancers.github.io/LateTermAssignment/) - Here you can find all current documentation which are also listed below.
 * [Development manual](https://lonelydancers.github.io/LateTermAssignment/dev_manual) - Here is all you need to know to start developing.
 * [Administration manual](https://lonelydancers.github.io/LateTermAssignment/adm_manual) - Here is all you need to know to deploy the app.
-* [Design manual](https://lonelydancers.github.io/LateTermAssignment/design_report) - Here is the design report showing initial design.
+* [Design report](https://lonelydancers.github.io/LateTermAssignment/design_report) - Here is the design report showing initial design.
 
 
 ## Built With
