@@ -44,11 +44,11 @@ describe("lonelydancerstage.herokuapp.com", () => {
         await page.click('#td2');
         await page.click('#td5');
         await page.click('#td3');
-        await page.waitForFunction('document.getElementById("winnerAlert").innerHTML != ""');
-        let text = await page.$eval('#winnerAlert', (elem) => {
+        await page.waitForFunction('document.getElementById("turn").innerHTML[1] != ","');
+        let text = await page.$eval('#turn', (elem) => {
             return elem.innerHTML;
         });
-        expect(text).toBe('x Won!');
+        expect(text).toBe('X is the winner!');
       });
 
 

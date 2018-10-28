@@ -45,18 +45,28 @@ app.get("/tic/turnnumber", (req, res) =>  {
     res.status(200).send(JSON.stringify({ turn: tic.getTurnNumber() }, null, 3));
 });
 
+//
 app.get("/", (req, res) => {
 	res.status(405).send({ error: "GET method not allowed, try OPTIONS." });
   });
-  
+// /api tells what apis are available  
 app.options("/", (req, res) => {
 const options = {
-	options: { get: ["/api/tic/newgame", "/api/tic/getboard"] }
+	options: { get: ["/api/tic/newgame", "/api/tic/getboard", "/api/tic/insert", "/api/tic/gamover", "/api/tic/turnnumber"] }
 };
 res.status(200).send(options);
 });
-// /tic tell what apis are available
+
+//get shouldnt work only options
 app.get("/tic", (req, res) => {
-	res.status(200).send("/tic/turnnumber shows the turn number. /tic/gameover shows if game is over. /tic/insert element into the board takes theIndex value. /tic/newgame resets the game");
-});
+	res.status(405).send({ error: "GET method not allowed, try OPTIONS." });
+  });
+  
+// /tic tell what apis are available
+app.options("/tic", (req, res) => {
+	const options = {
+		options: { get: ["/api/tic/newgame", "/api/tic/getboard", "/api/tic/insert", "/api/tic/gamover", "/api/tic/turnnumber"] }
+	};
+	res.status(200).send(options);
+	});
 module.exports = app;
