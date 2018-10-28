@@ -23,13 +23,16 @@ $('td').click(function(){
                 insertedChar = 'X'
             }
           $(this).html(turn);
-          $('#turn').html(insertedChar + ", it's your turn!");
+          const char = await getGameOver();
+          if (char == 'c') {
+            $('#turn').html(insertedChar + ", it's your turn!");
+          }
         }
         const char = await getGameOver();
-        if( char == 'd') {
+        if (char == 'd') {
           $('#turn').html("It's a draw!");
         }
-        else if(char == 'x' || char == 'o') {
+        else if (char == 'x' || char == 'o') {
           $('#turn').html(char.toUpperCase() + " is the winner!");
         }
     })();
