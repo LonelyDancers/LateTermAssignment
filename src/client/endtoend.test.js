@@ -7,7 +7,7 @@ describe("lonelydancerstage.herokuapp.com", () => {
 
     beforeEach(async () => {
         browser = await puppeteer.launch({
-          headless: false,
+          headless: true,
           slowMo: 0,
           args: ['--no-sandbox', '--disable-setuid-sandbox']});
         page = await browser.newPage();
@@ -44,11 +44,11 @@ describe("lonelydancerstage.herokuapp.com", () => {
         await page.click('#td2');
         await page.click('#td5');
         await page.click('#td3');
-        await page.waitForFunction('document.getElementById("winnerAlert").innerHTML != ""');
-        let text = await page.$eval('#winnerAlert', (elem) => {
+        await page.waitForFunction('document.getElementById("turn").innerHTML != ""');
+        let text = await page.$eval('#turn', (elem) => {
             return elem.innerHTML;
         });
-        expect(text).toBe('x Won!');
+        expect(text).toBe('X is the winner!');
       });
 
 

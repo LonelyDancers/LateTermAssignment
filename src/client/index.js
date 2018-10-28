@@ -27,10 +27,10 @@ $('td').click(function(){
         }
         const char = await getGameOver();
         if( char == 'd') {
-          document.querySelector('#winnerAlert').innerHTML = "It's a draw!";
+          document.querySelector('#turn').innerHTML = "It's a draw!";
         }
         else if(char == 'x' || char == 'o') {
-          document.querySelector('#winnerAlert').innerHTML = char + " Won!";
+          document.querySelector('#turn').innerHTML = char.toUpperCase() + " is the winner!";
         }
     })();
 });
