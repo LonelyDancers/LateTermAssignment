@@ -10,13 +10,19 @@ These instructions will get you a copy of the project up and running on your loc
 
 ## Prerequisites
 
-To gain access to the source please contact one of the project owners.
+To gain access to the source control system please contact one of the project owners.
 
 The project's git repository needs to be cloned with git before being deployed.
 
 * [Git](https://git-scm.com/) - The source control client used.
 
 * [Node.js](https://nodejs.org/en/download/) - The runtime environment used.
+
+## How to run
+If you are using git bash you can use:
+```
+$git clone https://github.com/LonelyDancers/LateTermAssignment
+```
 
 ## Project structure
 
