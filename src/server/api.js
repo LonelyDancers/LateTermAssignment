@@ -26,4 +26,10 @@ app.get("/tic/gameover", (req, res) =>  {
 	//res.status(200).json((JSON.stringify({ a: tic.getBoard() }, null, 3)));
 });
 
+app.post("/tic/newgame", function(req, res) {
+	tic.newGame();
+	res.status(200);
+	res.send(JSON.stringify({ "reset": "true"}, null, 3));
+});
+
 module.exports = app;

@@ -57,7 +57,7 @@ class Tic {
 	newGame(){
 		this.turnNumber = 0;
 		this.xTurn = true;
-		this.board = this.board.resetBoard();
+		this.board = new Board();
 	}
 }
 
