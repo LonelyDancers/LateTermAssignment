@@ -49,6 +49,21 @@ jobs:
           command: |
             git push https://heroku:0ec465b5-7833-43a1-b0e6-93bc38581427@git.heroku.com/lonelydancerstage.git master
 
+  build-again:
+    docker:
+      # specify the version you desire here
+      - image: circleci/node:latest-browsers
+      
+      # Specify service dependencies here if necessary
+      # CircleCI maintains a library of pre-built images
+      # documented at https://circleci.com/docs/2.0/circleci-images/
+      # - image: circleci/mongo:3.4.4
+
+    working_directory: ~/repo
+
+    steps:
+      - checkout
+
       # Download and cache dependencies
       - restore_cache:
           keys:
@@ -62,7 +77,8 @@ jobs:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
-      # run puppeteer tests!
+
+      # run tests!
       - run: yarn testPuppeteer
 
   deploy-to-production:
@@ -85,10 +101,18 @@ workflows:
           filters:
             branches:
               only: master
+      - build-again:
+          requires:
+            - build
+            - deploy-to-staging
+          filters:
+            branches:
+              only: master
       - deploy-to-production:
           requires:
             - build
             - deploy-to-staging
+            - build-again
           filters:
             branches:
               only: master
