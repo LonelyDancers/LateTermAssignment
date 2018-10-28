@@ -11,6 +11,8 @@ Here are instructions on how to deploy this project on a live system.
 ## Prerequisites
 To gain access to the source control system please contact one of the project owners.
 
+* [Link to repository](https://github.com/LonelyDancers/LateTermAssignment)
+
 The project's git repository needs to be cloned with git before being deployed.
 
 * [Git](https://git-scm.com/) - The source control client used.
@@ -22,20 +24,23 @@ If you are using git bash you can use:
 ```
 $git clone https://github.com/LonelyDancers/LateTermAssignment
 ```
-
-To deploy the app you need only run the following command if it is for the first time:
+To build the app you need only run the following command if it is for the first time since it installs all necessary dependencies:
 ```
 $npm run freshbuild
 ```
-And then to deploy:
+And then to deploy run:
 ```
 $ npm run deploy -- "some message"
 ```
-The deploy command runs all test, adds all changes and pushes the to the repository which, if all tests pass, is deployed on a production server.
+The deploy command runs relevant tests locally, saves code coverage, adds all changes to the coverage folder, commits with a message and pushes to the repository which runs unit tests and integration tests on CircleCI and then deploys to a staging server and if puppeteer tests are successful on the staging server then it is deployed on a production server.
+
+For further build commands check package.json in the project root.
+
+* [Click here to go to deployed page](http://lonelydancers.herokuapp.com/)
 
 ## Project structure
 
-The structure of the project is as follows:
+The structure of the project needed for maintenance is:
 
 * .circleci - Contains a config.yml for CircleCI.
 * coverage - Contains code coverage.
