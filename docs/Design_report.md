@@ -8,7 +8,7 @@ Here are the original designs for the app. How the app was originally conceived 
 
 ![Class diagram](https://i.imgur.com/Goay9gp.jpg)
 
-The original class diagram.
+The original class diagram. It went through some changes in development and currently we only have tic.js and board.js.
 
 ![Tic-tac-toe board](https://i.imgur.com/bBDusvK.png)
 

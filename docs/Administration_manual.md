@@ -27,3 +27,4 @@ And then to deploy:
 ```
 $ npm run deploy -- "some message"
 ```
+The deploy command runs all test, adds all changes and pushes the to the repository which, if all tests pass, is deployed on a production server.
