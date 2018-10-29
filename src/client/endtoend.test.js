@@ -18,7 +18,7 @@ describe("lonelydancerstage.herokuapp.com", () => {
       });
 
       test("Should click on last table element", async () => {
-        jest.setTimeout(10000);
+        jest.setTimeout(30000);
         await page.goto(url);
         await page.click('#td9');
         await page.waitForFunction('document.getElementById("td9").innerHTML == "X"');
@@ -29,7 +29,7 @@ describe("lonelydancerstage.herokuapp.com", () => {
       });
 
       test("Should let x win", async () => {
-        jest.setTimeout(10000);
+        jest.setTimeout(30000);
         await page.goto(url);
         await page.click('#td1');
         await page.click('#td4');
@@ -44,7 +44,7 @@ describe("lonelydancerstage.herokuapp.com", () => {
       });
 
       test("Should be a draw", async () => {
-        jest.setTimeout(10000);
+        jest.setTimeout(30000);
         await page.goto(url);
         await page.click('#td1');
         await page.click('#td4');
