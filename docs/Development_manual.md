@@ -30,6 +30,8 @@ To build the app you need only run the following command if it is for the first 
 ```
 $npm run freshbuild
 ```
+The server should then run on localhost:8080
+Use an OPTIONS request on localhost:8080/api to see the available API urls. 
 
 ## Project structure
 

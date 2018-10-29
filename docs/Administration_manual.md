@@ -24,19 +24,24 @@ If you are using git bash you can use:
 ```
 $git clone https://github.com/LonelyDancers/LateTermAssignment
 ```
-To build the app you need only run the following command if it is for the first time since it installs all necessary dependencies:
+To build and run the the app locally you need only run the following command if it is for the first time since it installs all necessary dependencies:
 ```
 $npm run freshbuild
 ```
+The server should then run on localhost:8080
+Use an OPTIONS request on localhost:8080/api to see the available API urls. 
+
 And then to deploy run:
 ```
 $ npm run deploy -- "some message"
 ```
 The deploy command runs relevant tests locally, saves code coverage, adds all changes to the coverage folder, commits with a message and pushes to the repository which runs unit tests and integration tests on CircleCI and then deploys to a staging server and if puppeteer tests are successful on the staging server then it is deployed on a production server.
 
-For further build commands check package.json in the project root.
+For further build commands check scripts in package.json in the project root.
 
 * [Click here to go to deployed page](http://lonelydancers.herokuapp.com/)
+* [Click here to go to see code coverage](http://lonelydancers.herokuapp.com/coverage)
+
 
 ## Project structure
 
